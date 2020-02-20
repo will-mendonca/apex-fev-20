@@ -1,0 +1,16 @@
+h1 {
+    color: red !important;
+}
+
+.meuestilo {
+    color: blue;
+
+}
+
+#aga {
+    color: green;
+}
+
+input[type="text"] {
+    color: red;
+}

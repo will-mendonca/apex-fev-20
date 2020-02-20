@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ficha Apex</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container">
+        <h2>Ficha de Avaliação</h2>
+        <form>  
+            <table class="table table-bordered table-sm">
+                <tbody>
+                    <tr>
+                        <td>
+                            <label>Nome</label>
+                        </td>
+                        <td>
+                            <input class="form-control form-control-sm" name="nome" type="text">
+                        </td>
+                        <td>
+                            <label>Curso</label>
+                        </td>
+                        <td>
+                            <input class="form-control form-control-sm" name="curso" type="text">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label>Data</label>
+                        </td>
+                        <td>
+                            <input class="form-control form-control-sm" name="data" type="date">
+                        </td>
+                        <td>
+                            <label>Instrutor</label>
+                        </td>
+                        <td>
+                            <input class="form-control form-control-sm" name="nome_instrutor" type="text">
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-bordered table-hover table-sm">
+                <thead>
+                    <th class="text-center">Tópico</th>
+                    <th class="text-center">Excelente</th>
+                    <th class="text-center">Bom</th>
+                    <th class="text-center">Ruim</th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Sala/Equipamento</td>
+                        <td class="text-center"><input type="radio" name="sala" value="3"></td>
+                        <td class="text-center"><input type="radio" name="sala" value="2"></td>
+                        <td class="text-center"><input type="radio" name="sala" value="1"></td>
+                    </tr>
+                    <tr>
+                        <td>Pontualidade</td>
+                        <td class="text-center"><input type="radio" name="pontualidade" value="3"></td>
+                        <td class="text-center"><input type="radio" name="pontualidade" value="2"></td>
+                        <td class="text-center"><input type="radio" name="pontualidade" value="1"></td>
+                    </tr>
+                    <tr>
+                        <td>Conteúdo apresentado</td>
+                        <td class="text-center"><input type="radio" name="conteudo" value="3"></td>
+                        <td class="text-center"><input type="radio" name="conteudo" value="2"></td>
+                        <td class="text-center"><input type="radio" name="conteudo" value="1"></td>
+                    </tr>
+                    <tr>
+                        <td>Instrutor</td>
+                        <td class="text-center"><input type="radio" name="instrutor" value="3"></td>
+                        <td class="text-center"><input type="radio" name="instrutor" value="2"></td>
+                        <td class="text-center"><input type="radio" name="instrutor" value="1"></td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-bordered table-sm">
+                <tbody>
+                    <tr>
+                        <td>
+                            <label>Dificuldade</label>
+                        </td>
+                        <td>
+                            <input class="form-control form-control-sm" name="dificuldade" type="text">
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td>
+                            <label>Sugestão/Crítica</label>
+                        </td>
+                        <td>
+                            <textarea class="form-control form-control-sm" name="sugestao" cols="60"
+                                rows="4"></textarea>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <button class="btn btn-primary" type="submit">Enviar</button>
+        </form>
+    </div>
+</body>
+
+</html>

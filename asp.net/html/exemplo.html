@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="estilo.css" rel="stylesheet">
+
+</head>
+<body>
+    <h1 class="meuestilo" id="aga" style="color: blueviolet">Teste</h1>
+    <form>
+        <fieldset>
+            <legend>Dados Pessoais</legend>
+            <label>Nome:</label>
+            <input type="text" name="nome" placeholder="Informe o nome" required>
+            <input type="checkbox" name="MoradorLocal">
+            <label>Morador Local</label>
+            <br>
+            <label>Mais informações</label>
+            <textarea name="info"  cols="40" rows="10"></textarea>
+            <progress value="30" max="100"></progress> 
+        </fieldset>
+        <fieldset>
+            <legend>Documentos</legend>
+            <label>CPF:</label>
+            <input type="text" name="cpf" disabled>
+            <label>UF:</label>
+            <select name="estado">
+                <optgroup label="Sudeste">
+                    <option value="SP" label="São Paulo"></option>
+                </optgroup>     
+                <optgroup label="Sul">
+                    <option value="SC" label="Santa Catarina"></option>
+                    <option value="RS">Rio Grande do Sul</option>
+                </optgroup>
+            </select>
+        </fieldset>
+        <input type="reset" value="Limpar">
+        <input type="submit" value="Enviar">
+        <input type="button" value="Exemplo" id="exemplo">
+    </form>
+
+    <table>
+        <thead>
+            <th>Coluna 1</th>
+            <th>Coluna 2</th>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Vl c1</td>
+                <td>Vl c2</td>
+            </tr>
+            <tr>
+                <td>Vl2 c1</td>
+                <td>Vl2 c2</td>
+            </tr>
+        </tbody>
+    </table>
+    <script>
+        document.querySelector("#exemplo").addEventListener("click", function() {
+            alert("aaaaa");
+        });
+        document.querySelector("input").addEventListener("blur", () => {
+            alert("entrou");
+        })
+    </script>
+</body>
+</html>
