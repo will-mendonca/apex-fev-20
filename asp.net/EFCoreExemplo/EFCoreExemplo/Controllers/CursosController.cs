@@ -21,7 +21,7 @@ namespace EFCoreExemplo.Controllers
         // GET: Cursos
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Curso.ToListAsync());
+            return View(await _context.Cursos.ToListAsync());
         }
 
         // GET: Cursos/Details/5
@@ -32,7 +32,7 @@ namespace EFCoreExemplo.Controllers
                 return NotFound();
             }
 
-            var curso = await _context.Curso
+            var curso = await _context.Cursos
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (curso == null)
             {
@@ -72,7 +72,7 @@ namespace EFCoreExemplo.Controllers
                 return NotFound();
             }
 
-            var curso = await _context.Curso.FindAsync(id);
+            var curso = await _context.Cursos.FindAsync(id);
             if (curso == null)
             {
                 return NotFound();
@@ -123,7 +123,7 @@ namespace EFCoreExemplo.Controllers
                 return NotFound();
             }
 
-            var curso = await _context.Curso
+            var curso = await _context.Cursos
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (curso == null)
             {
@@ -138,15 +138,15 @@ namespace EFCoreExemplo.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var curso = await _context.Curso.FindAsync(id);
-            _context.Curso.Remove(curso);
+            var curso = await _context.Cursos.FindAsync(id);
+            _context.Cursos.Remove(curso);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
         private bool CursoExists(int id)
         {
-            return _context.Curso.Any(e => e.Id == id);
+            return _context.Cursos.Any(e => e.Id == id);
         }
     }
 }

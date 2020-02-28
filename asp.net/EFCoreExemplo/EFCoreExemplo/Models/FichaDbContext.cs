@@ -10,17 +10,19 @@ namespace EFCoreExemplo.Models
     public class FichaDbContext : DbContext
     {
 
-        public virtual DbSet<Aluno> Alunos { get; set; }
+        public DbSet<Aluno> Alunos { get; set; }
 
-        public virtual DbSet<Instrutor> Instrutores { get; set; }
+        public DbSet<Instrutor> Instrutores { get; set; }
+        
+        public DbSet<Curso> Cursos { get; set; }
+
+        public DbSet<Avaliacao> Avaliacoes { get; set; }
 
         public FichaDbContext(DbContextOptions<FichaDbContext> options)
             :base(options)
         {
 
         }
-
-        public DbSet<EFCoreExemplo.Models.Curso> Curso { get; set; }
 
     }
 }

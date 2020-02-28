@@ -1,0 +1,145 @@
+﻿@model EFCoreExemplo.Models.Avaliacao
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h2>Ficha de Avaliação</h2>
+<hr />
+<form asp-action="Create">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <table class="table table-bordered table-sm">
+        <tbody>
+            <tr>
+                <td>
+                    <label asp-for="AlunoId" class="control-label"></label>
+                </td>
+                <td>
+                    <select asp-for="AlunoId" class="form-control" asp-items="ViewBag.AlunoId"></select>
+                </td>
+                <td>
+                    <label asp-for="CursoId" class="control-label"></label>
+                </td>
+                <td>
+                    <select asp-for="CursoId" class="form-control" asp-items="ViewBag.CursoId"></select>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label asp-for="Data" class="control-label"></label>
+                </td>
+                <td>
+                    <input asp-for="Data" class="form-control" />
+                    <span asp-validation-for="Data" class="text-danger"></span>
+                </td>
+                <td>
+                    <label asp-for="InstrutorId" class="control-label"></label>
+                </td>
+                <td>
+                    <select asp-for="InstrutorId" class="form-control" asp-items="ViewBag.InstrutorId"></select>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-bordered table-hover table-sm">
+        <thead>
+            <tr>
+                <th class="text-center">Tópico</th>
+                <th class="text-center">Excelente</th>
+                <th class="text-center">Bom</th>
+                <th class="text-center">Ruim</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><label asp-for="AvaliacaoSala" class="control-label"></label></td>
+                <td class="text-center"><input type="radio" name="AvaliacaoSala" value="3"></td>
+                <td class="text-center"><input type="radio" name="AvaliacaoSala" value="2"></td>
+                <td class="text-center"><input type="radio" name="AvaliacaoSala" value="1"></td>
+            </tr>
+            <tr>
+                <td><label asp-for="AvaliacaoPontualidade" class="control-label"></label></td>
+                <td class="text-center"><input type="radio" name="AvaliacaoPontualidade" value="3"></td>
+                <td class="text-center"><input type="radio" name="AvaliacaoPontualidade" value="2"></td>
+                <td class="text-center"><input type="radio" name="AvaliacaoPontualidade" value="1"></td>
+            </tr>
+            <tr>
+                <td><label asp-for="AvaliacaoConteudo" class="control-label"></label></td>
+                <td class="text-center"><input type="radio" name="AvaliacaoConteudo" value="3"></td>
+                <td class="text-center"><input type="radio" name="AvaliacaoConteudo" value="2"></td>
+                <td class="text-center"><input type="radio" name="AvaliacaoConteudo" value="1"></td>
+            </tr>
+            <tr>
+                <td><label asp-for="AvaliacaoInstrutor" class="control-label"></label></td>
+                <td class="text-center"><input type="radio" name="AvaliacaoInstrutor" value="3"></td>
+                <td class="text-center"><input type="radio" name="AvaliacaoInstrutor" value="2"></td>
+                <td class="text-center"><input type="radio" name="AvaliacaoInstrutor" value="1"></td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-bordered table-sm">
+        <tbody>
+            <tr>
+                <td>
+                    <label asp-for="Dificuldade" class="control-label"></label>
+                </td>
+                <td>
+                    <input asp-for="Dificuldade" class="form-control" />
+                    <span asp-validation-for="Dificuldade" class="text-danger"></span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label asp-for="Sugestao" class="control-label"></label>
+                </td>
+                <td>
+                    <input asp-for="Sugestao" class="form-control" />
+                    <span asp-validation-for="Sugestao" class="text-danger"></span>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+
+
+    @*<div class="form-group">
+        </div>
+        <div class="form-group">
+        </div>
+        <div class="form-group">
+        </div>
+        <div class="form-group">
+        </div>
+        <div class="form-group">
+            <input asp-for="AvaliacaoSala" class="form-control" />
+            <span asp-validation-for="AvaliacaoSala" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <input asp-for="AvaliacaoPontualidade" class="form-control" />
+            <span asp-validation-for="AvaliacaoPontualidade" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <input asp-for="AvaliacaoConteudo" class="form-control" />
+            <span asp-validation-for="AvaliacaoConteudo" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <input asp-for="AvaliacaoInstrutor" class="form-control" />
+            <span asp-validation-for="AvaliacaoInstrutor" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+        </div>
+        <div class="form-group">
+        </div>*@
+    <div class="form-group">
+        <input type="submit" value="Create" class="btn btn-primary" />
+    </div>
+</form>
+
+
+<div>
+    <a asp-action="Index">Voltar</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

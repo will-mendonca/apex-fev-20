@@ -20,11 +20,5 @@ namespace EFCoreExemplo.Models
         [DataType(DataType.Date)]
         public DateTime DataNascimento { get; set; }
 
-        [ForeignKey("Curso")]
-        [Display(Name = "Curso")]
-        public int CursoId { get; set; }
-
-        public virtual Curso Curso { get; set; }
-
     }
 }

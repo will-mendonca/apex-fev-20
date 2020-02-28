@@ -21,8 +21,7 @@ namespace EFCoreExemplo.Controllers
         // GET: Alunos
         public async Task<IActionResult> Index()
         {
-            var fichaDbContext = _context.Alunos.Include(a => a.Curso);
-            return View(await fichaDbContext.ToListAsync());
+            return View(await _context.Alunos.ToListAsync());
         }
 
         // GET: Alunos/Details/5
@@ -34,7 +33,6 @@ namespace EFCoreExemplo.Controllers
             }
 
             var aluno = await _context.Alunos
-                .Include(a => a.Curso)
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (aluno == null)
             {
@@ -47,7 +45,7 @@ namespace EFCoreExemplo.Controllers
         // GET: Alunos/Create
         public IActionResult Create()
         {
-            ViewData["CursoId"] = new SelectList(_context.Curso, "Id", "Nome");
+            ViewData["CursoId"] = new SelectList(_context.Cursos, "Id", "Nome");
             return View();
         }
 
@@ -56,7 +54,7 @@ namespace EFCoreExemplo.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Nome,DataNascimento,CursoId")] Aluno aluno)
+        public async Task<IActionResult> Create([Bind("Id,Nome,DataNascimento")] Aluno aluno)
         {
             if (ModelState.IsValid)
             {
@@ -64,7 +62,6 @@ namespace EFCoreExemplo.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["CursoId"] = new SelectList(_context.Curso, "Id", "Nome", aluno.CursoId);
             return View(aluno);
         }
 
@@ -81,7 +78,6 @@ namespace EFCoreExemplo.Controllers
             {
                 return NotFound();
             }
-            ViewData["CursoId"] = new SelectList(_context.Curso, "Id", "Nome", aluno.CursoId);
             return View(aluno);
         }
 
@@ -90,7 +86,7 @@ namespace EFCoreExemplo.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Nome,DataNascimento,CursoId")] Aluno aluno)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Nome,DataNascimento")] Aluno aluno)
         {
             if (id != aluno.Id)
             {
@@ -117,7 +113,6 @@ namespace EFCoreExemplo.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["CursoId"] = new SelectList(_context.Curso, "Id", "Nome", aluno.CursoId);
             return View(aluno);
         }
 
@@ -130,7 +125,6 @@ namespace EFCoreExemplo.Controllers
             }
 
             var aluno = await _context.Alunos
-                .Include(a => a.Curso)
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (aluno == null)
             {
