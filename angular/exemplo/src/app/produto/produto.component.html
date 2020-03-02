@@ -1,0 +1,23 @@
+<h1>{{texto}}</h1>
+<a href="{{url}}" target="_blank">Apex Ensino - Site</a>
+<img *ngIf="mostrargatinho" [src]="imagem + '200/200'">
+<button type="button" (click)="gatinho()">Mostrar/Esconder</button>
+<br>
+<input type="text" name="name" [(ngModel)]="campo">
+<button type="button" (click)="mostrar()">Mostrar Campo</button>
+<button type="button" (click)="alterar()">Alterar Campo</button>
+<br>
+<ul [ngSwitch]="cor">
+    <li *ngSwitchCase="'vermelho'">Vermelho</li>
+    <li *ngSwitchCase="'verde'">Verde</li>
+    <li *ngSwitchCase="'azul'">Azul</li>
+</ul>
+<button type="button" class="btn btn-danger" (click)="mudarcor('vermelho')">Vermelho</button>
+<button type="button" class="btn btn-success" (click)="mudarcor('verde')">Verde</button>
+<button type="button" [className]="estilo" (click)="mudarcor('azul')">Azul</button>
+<br>
+<ul>
+    <li *ngFor="let c of cidades">{{c}}</li>
+</ul>
+<button type="button" (click)="remove()">Remover</button>
+<button type="button" (click)="adiciona()">Adicionar</button>
