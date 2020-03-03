@@ -1,0 +1,21 @@
+<h1>Cadastro de Pessoa</h1>
+
+<form>
+    <fieldset>
+        <legend>Dados</legend>
+        <label>Nome:</label>
+        <input name="nome" type="text">
+        <label>CEP:</label>
+        <input type="text" name="cep" [(ngModel)]="cep">
+        <button type="button" (click)="consultaCep()">Consulta CEP</button>
+    </fieldset>
+    <fieldset *ngIf="cepValido">
+        <legend>Endereço</legend>
+        <label>Logradouro:</label>
+        <input type="text" name="logradouro" [(ngModel)]="logradouro">
+        <label>Bairro:</label>
+        <input type="text" name="bairro" [(ngModel)]="bairro">
+        <label>Cidade:</label>
+        <input type="text" name="cidade" [(ngModel)]="cidade">
+    </fieldset>
+</form>
