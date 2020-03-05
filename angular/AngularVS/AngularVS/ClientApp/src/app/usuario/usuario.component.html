@@ -1,0 +1,41 @@
+<div class="row">
+  <div class="col-6">
+    <h1 id="tableLabel">Usuários</h1>
+  </div>
+  <div class="col-6 text-right">
+    <button type="button" class="btn btn-primary pad-r" (click)="novo()">Adicionar</button>
+    <button type="button" class="btn btn-danger pad-r" *ngIf="adding" (click)="salvar()">Salvar</button>
+  </div>
+</div>
+
+<p *ngIf="!usuarios"><em>Loading...</em></p>
+
+<div class="row" *ngIf="adding">
+  <div class="col-4 form-group">
+    <label>Nome</label>
+    <input type="text" class="form-control" [(ngModel)]="nome">
+  </div>
+  <div class="col-2 form-group">
+    <label>Idade</label>
+    <input type="number" class="form-control" [(ngModel)]="idade">
+  </div>
+</div>
+
+<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="usuarios">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Nome</th>
+      <th>Idade</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let usuario of usuarios">
+      <td>{{ usuario.id }}</td>
+      <td>{{ usuario.nome }}</td>
+      <td>{{ usuario.idade }}</td>
+      <td><button class="btn btn-danger" type="button" (click)="excluir(usuario.id)">Excluir</button></td>
+    </tr>
+  </tbody>
+</table>
